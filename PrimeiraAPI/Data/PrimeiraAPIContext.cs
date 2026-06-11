@@ -9,6 +9,6 @@ public class PrimeiraAPIContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("server=localhost;database=PetShop;trusted_connection=true;");
+        optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;database=PetShop;trusted_connection=true;TrustServerCertificate=True;");
     }
 }

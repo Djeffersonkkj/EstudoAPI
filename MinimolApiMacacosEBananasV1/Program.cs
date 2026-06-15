@@ -21,6 +21,11 @@ app.MapGet("/macacos", (IMacacoService macacoService) => macacoService.ListarMac
 
 app.MapPost("macacos/transferirbananas/{idRemetente}/{idDestinatario}/{quantidade}", (int idRemetente, int idDestinatario, int quantidade, IMacacoService macacoService) => macacoService.DarBanana(idRemetente, idDestinatario, quantidade));
 
+app.MapPost("macacos/criar/{nome}/{bananas}", (string nome, int bananas, IMacacoService macacoService) => 
+    macacoService.CriarMacaco(nome, bananas));
+
+app.MapDelete("macacos/deletar/{id}", (int id, IMacacoService macacoService) => macacoService.Excluir(id));
+
 app.UseSwaggerUI();
 
 app.Run();

@@ -19,5 +19,18 @@ public class MacacoRepository : IMacacoRepository
     public Macaco? ObterMacacoPorId(int id)
         => _macacos.FirstOrDefault(m => m.Id == id);
 
-    
+    public void Excluir(int idMacaco)
+    {
+        Macaco? macaco = _macacos.FirstOrDefault(m => m.Id == idMacaco);
+
+        if (macaco == null)
+            return;
+
+        _macacos.Remove(macaco);
+    }
+
+    public void Adicionar(Macaco macaco)
+    {
+        _macacos.Add(macaco);
+    }
 }

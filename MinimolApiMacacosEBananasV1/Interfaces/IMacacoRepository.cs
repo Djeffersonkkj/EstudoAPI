@@ -9,4 +9,8 @@ public interface IMacacoRepository
 
     Macaco? ObterMacacoPorId(int id);
 
+    void Excluir(int idMacaco);
+
+    void Adicionar(Macaco macaco);
+
 }

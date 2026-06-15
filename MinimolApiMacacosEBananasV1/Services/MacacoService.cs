@@ -30,4 +30,14 @@ public class MacacoService : IMacacoService
         destinatario.GanharBananas(quantidade);
 
     }
+
+    public void Excluir(int idMacaco)
+    {
+        _macacoRepository.Excluir(idMacaco);
+    }
+
+    public void CriarMacaco(string nome, int bananas)
+    {
+        _macacoRepository.Adicionar(new Macaco(nome, bananas));
+    }
 }
